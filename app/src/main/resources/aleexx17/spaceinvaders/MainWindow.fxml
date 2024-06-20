@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="aleexx17.spaceinvaders.controller.MainWindowController">
+
+    <!-- Top Menu -->
+    <top>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="New Game" fx:id="newGameButton" onAction="#handleNewGame"/>
+            <Button text="Pause" fx:id="pauseButton" onAction="#handlePauseGame"/>
+            <Button text="View High Scores" fx:id="viewScoresButton" onAction="#handleViewScores"/>
+        </HBox>
+    </top>
+
+    <!-- Game Area -->
+    <center>
+        <Canvas fx:id="gameCanvas" width="800" height="600"/>
+    </center>
+
+    <!-- Bottom Controls and Status Display -->
+    <bottom>
+        <VBox spacing="10" alignment="CENTER">
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Move Left" fx:id="moveLeftButton" onAction="#handleMoveLeft"/>
+                <Button text="Move Right" fx:id="moveRightButton" onAction="#handleMoveRight"/>
+                <Button text="Shoot" fx:id="shootButton" onAction="#handleShoot"/>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER">
+                <Label text="Score: " />
+                <Label fx:id="scoreLabel" text="0"/>
+                <Label text="Lives: " />
+                <Label fx:id="livesLabel" text="3"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>
