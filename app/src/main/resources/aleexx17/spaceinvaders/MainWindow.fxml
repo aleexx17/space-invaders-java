@@ -5,9 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="aleexx17.spaceinvaders.controller.MainWindowController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="aleexx17.spaceinvaders.controller.GameController">
 
     <!-- Top Menu -->
     <top>
@@ -20,17 +21,14 @@
 
     <!-- Game Area -->
     <center>
-        <Canvas fx:id="gameCanvas" width="800" height="600"/>
+        <Pane fx:id="gamePane">
+            <Canvas fx:id="gameCanvas" width="800" height="600"/>
+        </Pane>
     </center>
 
     <!-- Bottom Controls and Status Display -->
     <bottom>
         <VBox spacing="10" alignment="CENTER">
-            <HBox spacing="10" alignment="CENTER">
-                <Button text="Move Left" fx:id="moveLeftButton" onAction="#handleMoveLeft"/>
-                <Button text="Move Right" fx:id="moveRightButton" onAction="#handleMoveRight"/>
-                <Button text="Shoot" fx:id="shootButton" onAction="#handleShoot"/>
-            </HBox>
             <HBox spacing="20" alignment="CENTER">
                 <Label text="Score: " />
                 <Label fx:id="scoreLabel" text="0"/>
